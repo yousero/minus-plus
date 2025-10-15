@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 Welcome to Minus+
+  p A minimal social network: login-based profiles, friends list, and settings.
+  if !currentUser
+    p
+      a.button(href="/register") Get started
+      |  or 
+      a(href="/login") log in
+
+
+

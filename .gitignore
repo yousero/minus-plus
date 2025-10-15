@@ -1,3 +1,8 @@
+node_modules/
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+*.log
 # Logs
 logs
 *.log

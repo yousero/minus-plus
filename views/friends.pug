@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h2 My friends
+  form(method="post" action="/friends/add" class="inline")
+    input(type="text" name="login" placeholder="User login" required)
+    button(type="submit") Add
+  if friends && friends.length
+    ul.list
+      each f in friends
+        li
+          a(href=`/u/${f.login}`)= f.display_name
+          span.small  (@#{f.login})
+          form(method="post" action="/friends/remove" class="inline")
+            input(type="hidden" name="user_id" value=f.id)
+            button(type="submit") Remove
+  else
+    p.small List is empty
+
+
+

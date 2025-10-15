@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title Minus+ - mini social network
+    link(rel="stylesheet" href="/styles.css")
+  body
+    header.container
+      nav.nav
+        a.brand(href="/") Minus+
+        if currentUser
+          a(href="/mypage") My page
+          a(href="/friends") Friends
+          a(href="/settings") Settings
+          form(method="post" action="/logout" style="display:inline")
+            button(type="submit") Log out
+        else
+          a(href="/login") Log in
+          a(href="/register") Sign up
+    main.container
+      if error
+        .flash.flash-error= error
+      block content
+    footer.container
+      p.small © #{new Date().getFullYear()} Minus+
+
+
+

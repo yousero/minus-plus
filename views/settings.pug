@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h2 Settings
+  form(method="post")
+    label Name
+    input(type="text" name="display_name" required value=user.display_name)
+    label Bio
+    textarea(name="bio")(rows="4")= user.bio
+    label New password (optional)
+    input(type="password" name="password")
+    button(type="submit") Save
+
+
+
